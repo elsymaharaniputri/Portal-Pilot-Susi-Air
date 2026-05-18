@@ -17,9 +17,9 @@ import { Home, CalendarCheck2, BookOpen, Settings } from "lucide-vue-next";
       <BookOpen :size="24" :stroke-width="1.5" />
       <span>Logbook</span>
     </NuxtLink>
-    <NuxtLink to="/more" class="nav-item" active-class="nav-item--active">
+    <NuxtLink to="/" class="nav-item" active-class="nav-item--active">
       <Settings :size="24" :stroke-width="1.5" />
-      <span>Lainnya</span>
+      <span>More</span>
     </NuxtLink>
   </nav>
 </template>
