@@ -1,0 +1,108 @@
+// assets/styles/main.scss
+@use "./variables" as *;
+@use 'sass:color';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Phone frame
+#phone {
+  width: 390px;
+  height: 844px;
+  background: $bg;
+  border-radius: 44px;
+  overflow: hidden;
+  position: relative;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+// Scrollbar hide
+* {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+// Card
+.card {
+  @include card;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+
+  &__title {
+    font-size: 14px;
+    font-weight: 700;
+    color: $text-primary;
+  }
+
+  &__link {
+    font-size: 12px;
+    color: $red;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
+
+// Status bar
+.status-bar {
+  height: 44px;
+  background: $navy;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  flex-shrink: 0;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+// Badge variants
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+
+  &--safe {
+    background: rgba($success, 0.12);
+    color: color.adjust($success, $lightness: -10%);
+  }
+  &--warn {
+    background: rgba($warning, 0.15);
+    color: color.adjust($warning, $lightness: -20%);
+  }
+  &--danger {
+    background: rgba($danger, 0.12);
+    color: $danger;
+  }
+  &--expired {
+    background: rgba($danger, 0.15);
+    color: $danger;
+  }
+}
