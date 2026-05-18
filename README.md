@@ -1,64 +1,31 @@
-# Nuxt Starter Template
+# ✈️ Susi Air Pilot App
 
-[![Nuxt UI](https://img.shields.io/badge/Made%20with-Nuxt%20UI-00DC82?logo=nuxt&labelColor=020420)](https://ui.nuxt.com)
+Aplikasi mobile-first untuk pilot Susi Air.
 
-Use this template to get started with [Nuxt UI](https://ui.nuxt.com) quickly.
+## 🚀 Setup & Installation
 
-- [Live demo](https://starter-template.nuxt.dev/)
-- [Documentation](https://ui.nuxt.com/docs/getting-started/installation/nuxt)
+git clone
+npm install
+npm install pinia @pinia/nuxt lucide-vue-next
+npm run dev
+npm run build
+npm run preview
 
-<a href="https://starter-template.nuxt.dev/" target="_blank">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png">
-    <img alt="Nuxt Starter Template" src="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png" width="830" height="466">
-  </picture>
-</a>
+## 📚 Library yang Digunakan
 
-> The starter template for Vue is on https://github.com/nuxt-ui-templates/starter-vue.
+| Nuxt.js 3 | SSR + file-based routing |
+| Pinia |
+| Chart.js / Recharts | Visualisasi Hours to Limit |
+| SCSS | Styling modular |
+| Lucide Icons |
 
-## Quick Start
+## 🔧 Fitur yang ingin ditambahkan dan perbaikan jika Ada Waktu Lebih
 
-```bash [Terminal]
-npm create nuxt@latest -- -t ui
-```
-
-## Deploy your own
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-name=starter&repository-url=https%3A%2F%2Fgithub.com%2Fnuxt-ui-templates%2Fstarter&demo-image=https%3A%2F%2Fui.nuxt.com%2Fassets%2Ftemplates%2Fnuxt%2Fstarter-dark.png&demo-url=https%3A%2F%2Fstarter-template.nuxt.dev%2F&demo-title=Nuxt%20Starter%20Template&demo-description=A%20minimal%20template%20to%20get%20started%20with%20Nuxt%20UI.)
-
-## Setup
-
-Make sure to install the dependencies:
-
-```bash
-pnpm install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-pnpm dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-pnpm build
-```
-
-Locally preview production build:
-
-```bash
-pnpm preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-
-## Renovate integration
-
-Install [Renovate GitHub app](https://github.com/apps/renovate/installations/select_target) on your repository and you are good to go.
+- Unit testing pada logika Rolling Sum untuk memastikan perhitungan flight hours tetap akurat dan stabil.
+- Animasi transisi halaman yang lebih halus
+  Saya ingin mempelajari dan mengerjakan fitur-fitur berikut yang menurut saya pas untuk melengkapi fungsionalitas web ini :
+- Implementasi Service Worker untuk Offline Fallback — data tetap dapat diakses tanpa koneksi internet, kondisi yang sangat relevan di lingkungan penerbangan.
+- Integrasi Weather Briefing — integrasi data METAR/TAF real-time
+  Fitur ini dapat dikembangkan sebagai modul briefing cuaca penerbangan pada dashboard pilot di Nuxt dengan mengambil data real-time METAR dan TAF dari API aviasi seperti Aviation Weather Center atau CheckWX. Sistem menampilkan kondisi cuaca bandara keberangkatan dan tujuan seperti visibility, wind, cloud, pressure, serta forecast beberapa jam ke depan dalam bentuk card dan indikator visual berwarna (normal, caution, warning). Di sisi frontend, data dapat di-fetch menggunakan composable/service Nuxt lalu disimpan di Pinia store agar dapat dipakai lintas component seperti dashboard, next flight card, dan weather alert banner.
+- Fuel & Weight Balance Calculator — kalkulasi perencanaan penerbangan yang lebih efisien dan aman
+  Fitur ini dapat dibuat sebagai kalkulator interaktif untuk membantu pilot menghitung estimasi fuel requirement dan distribusi berat pesawat sebelum penerbangan. Pengguna menginput data seperti jumlah penumpang, baggage, cargo, fuel load, serta route distance, lalu sistem menghitung total weight, center of gravity estimation, dan sisa fuel berdasarkan konsumsi rata-rata pesawat. Fitur ini juga dipadukan dengan alert system yang memberi warning jika payload atau fuel melebihi batas aircraft limitation.
